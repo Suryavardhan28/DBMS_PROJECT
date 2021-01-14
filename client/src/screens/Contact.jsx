@@ -1,22 +1,14 @@
 import { Card,CardContent, Grid,Typography, makeStyles, Button } from '@material-ui/core'
 import Header from '../components/Header.jsx'
 import React, {useState,useContext} from 'react'
-import LocationOnIcon from '@material-ui/icons/LocationOn';
-import LocalPhoneIcon from '@material-ui/icons/LocalPhone';
-import EmailIcon from '@material-ui/icons/Email';
+
 import Footer from '../components/Footer.jsx';
 import { UserContext } from '../userContext';
 import axios from 'axios';
 
 
 const useStyles = makeStyles(() => ({
-  icon: {
-    width:"10vw",
-    height:"10vh",
-    paddingLeft:"9.8vw",
-    color:"black",
-    marginLeft:"8px"
-  },
+
   root: {
     minWidth:"32vw",
     maxWidth:"33vw",
@@ -179,7 +171,7 @@ const Submit = (e)=> {
             <Grid xs={4}>
                 <Card className={classes.root} style={{backgroundColor:"#EAEDED",paddingBottom:"1vh"}}>
                 <CardContent>
-                  <LocationOnIcon className={classes.icon}></LocationOnIcon>
+               
                   <Typography className={classes.title} gutterBottom>
                     Location
                   </Typography>
@@ -192,9 +184,9 @@ const Submit = (e)=> {
               </Card>
             </Grid>
             <Grid xs={4}>
-                <Card className={classes.root} style={{backgroundColor:"#000000",paddingBottom:"4vh"}}>
+                <Card className={classes.root} style={{backgroundColor:"#000000",paddingBottom:"1vh"}}>
                 <CardContent>
-                  <LocalPhoneIcon  className={classes.icon} style={{color:'#ffffff'}}></LocalPhoneIcon>
+                 
                   <Typography className={classes.title} style={{color:'#ffffff'}} gutterBottom>
          Phone Number
         </Typography>
@@ -207,9 +199,9 @@ const Submit = (e)=> {
               </Card>
             </Grid>
             <Grid xs={4}>
-                <Card className={classes.root} style={{backgroundColor:"#EAEDED",paddingBottom:"5vh"}}>
+                <Card className={classes.root} style={{backgroundColor:"#EAEDED",paddingBottom:"1vh"}}>
                 <CardContent >
-                  <EmailIcon className={classes.icon}></EmailIcon>
+           
                   <Typography className={classes.title}  gutterBottom>
           Email
         </Typography>     

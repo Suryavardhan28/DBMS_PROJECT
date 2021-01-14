@@ -168,7 +168,7 @@ const SignUp = () => {
               placeholder="1234567890"
               label="Phone Number"
               name="phonenumber"
-              value={email}
+              value={phonenumber}
                onChange={(e) => {
                 setPhonenumber(e.target.value);
                }}
