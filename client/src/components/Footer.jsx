@@ -28,6 +28,9 @@ const Footer = () => {
   const onclicktriggerhandler = () => {
     history.push('/triggertable')
   }
+  const onclickfeedbackhandler = () => {
+    history.push('/feedbacks')
+  }
   return (
     <Grid
       container
@@ -39,7 +42,13 @@ const Footer = () => {
       
      
       <Button style={{color:'#ffffff' ,fontSize:"1.1rem"}} onClick={onclickemployeehandler}>Employee</Button>
-      <Button style={{color:'#ffffff', fontSize:"1.1rem"}} onClick={onclickcontactushandler}>Contact Us</Button>
+           {
+  (userstore.user==="admin") &&   <Button style={{color:'#ffffff', fontSize:"1.1rem"}} onClick={onclickfeedbackhandler}>Feedbacks</Button>
+}
+           {
+  (userstore.user!=="admin") &&   <Button style={{color:'#ffffff', fontSize:"1.1rem"}} onClick={onclickcontactushandler}>Contact Us</Button>
+}
+
       {
   (userstore.user==="admin") &&  <Button style={{color:'#ffffff' ,fontSize:"1.1rem"}}  onClick={onclicktriggerhandler}>Trigge Table</Button>
 }

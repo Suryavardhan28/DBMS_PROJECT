@@ -15,6 +15,7 @@ import Addproducts from './screens/addProducts';
 import UpdatePrice from './screens/updatePrice';
 import UpdateEmployee from './screens/updateEmployee'
 import TriggerTable from './screens/triggerTable';
+import Feedbacks from './screens/feedbacks';
 function App() {
   return (
     <Router>
@@ -33,6 +34,7 @@ function App() {
         <Route path="/updateprice" exact component={UpdatePrice} />
         <Route path="/updateemployee" exact component={UpdateEmployee} />
         <Route path="/triggertable" exact component={TriggerTable} />
+        <Route path="/feedbacks" exact component={Feedbacks} />
       </Switch>
     </Router>
       

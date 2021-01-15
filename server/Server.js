@@ -193,6 +193,19 @@ app.post("/orders",async(req,res)=> {
     }});
 
 
+    //getFeedbacks
+  
+    app.get("/Feedbacks",async(req,res)=> {
+    try {
+        const results=  await db.query("Select * from feedback");
+        console.log(results.rows)
+          res.status(200).json({status:"success",data: results.rows}
+      )}
+     catch (error) {
+        res.status(500).json({status:"failed"})
+    }});
+
+
 
 
 
