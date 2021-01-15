@@ -4,6 +4,7 @@ import React, {useState,useContext} from 'react'
 
 import Footer from '../components/Footer.jsx';
 import { UserContext } from '../userContext';
+import { CartContext } from '../CartContext';
 import axios from 'axios';
 
 

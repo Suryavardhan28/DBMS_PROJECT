@@ -47,6 +47,7 @@ const useStyles = makeStyles({
 });
 
 const ProductsCard = (props) => {
+  const { cartstore }= useContext(CartContext);
   const classes = useStyles();
   const history = useHistory();
   const { dispatch } = useContext(CartContext);
@@ -86,8 +87,9 @@ const ProductsCard = (props) => {
         <Typography variant="body2" component="p"></Typography>
       </CardContent>
       <CardActions>
+       
       {
-    (userstore.user!=="admin") &&   <Button size="small" className={classes.btn} onClick={() => dispatch({
+    (userstore.user!=="admin") &&   <Button disabled={cartstore.length>6} size="small" className={classes.btn} onClick={() => dispatch({
       type: 'addToCart',
       payload: {
         id: id,

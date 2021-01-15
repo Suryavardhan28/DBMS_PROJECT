@@ -16,22 +16,18 @@ const useStyles = makeStyles(() => ({
     color: 'black',
     fontSize: '48px',
 
-    position: 'fixed',
-    top: '15vh',
-    left: '40vw',
+   
   },
   cart: {
     width: '100%',
     paddingBottom: '10px',
   },
   subtotal: {
-    position: 'absolute',
-    bottom: '15vh',
-    right: '15vw',
-    paddingBottom: '10px',
-    marginBottom:"30px",
-    fontWeight:"999",
    
+    
+    margin:"20px 0",
+    fontWeight:"999",
+    
   
   },
   root: {
@@ -81,20 +77,22 @@ const onclickCheckouthandler =() =>{
       <Grid item>
         <Header />
       </Grid>
+      <Grid item xs={12} conatiner justify="center" style={{margin:"6vh 80vh"}}>
+            <h1 className={classes.head}>Shopping Cart</h1>
+          </Grid>
       <Grid item container>
-        <Grid item sm={2} />
+        <Grid item xs={1} />
+       
         <Grid
           item
-          xs={12}
-          sm={8}
+          xs={10}
+          
           container
           direction="column"
           justify="center"
           alignItems="center"
         >
-          <Grid item conatiner>
-            <h1 className={classes.head}>Shopping Cart</h1>
-          </Grid>
+         
           <Grid container spacing={4}>
             {CartItems.filter((item) => storeid.includes(item.id)).map(
               (item) => {
@@ -110,25 +108,30 @@ const onclickCheckouthandler =() =>{
               }
             )}
           </Grid>
-          <Grid item container justify="flex-end" className={classes.subtotal}>
-            <Card>
-              <CardContent style ={{ backgroundColor:"#BDC3C7"}}>
+         
+        </Grid>
+      
+        <Grid item xs={1} />
+        <Grid container style={{margin:"0 10vw"}}>
+        <Grid item container justify="flex-end" className={classes.subtotal}>
+            <Card justifyContent="flex-end"  style={{backgroundColor:"#BDC3C7"}}>
+              <CardContent >
             <li >SubTotal = {'₹'} {totalPrice}</li>
               </CardContent>
             </Card>
           </Grid>
+       
           <Grid
             item
             container
             justify="flex-end"
-            style={{ position: 'absolute', bottom: '10vh', right: '15vw' }}
+            style={{ marginBottom:"20px" }}
           >
             <Button className={classes.submit} variant="contained" color="primary" size="medium" disabled={userstore.user==='' || cartstore.length === 0 } onClick={onclickCheckouthandler}>
               Checkout
             </Button>
           </Grid>
-        </Grid>
-        <Grid item sm={2} />
+          </Grid>
       </Grid>
       <Grid item container className={classes.footer}>
         <Footer />
