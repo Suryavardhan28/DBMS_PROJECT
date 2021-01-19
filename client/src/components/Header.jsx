@@ -66,6 +66,9 @@ const Header = () => {
     if(userstore.user !=="admin"){
     history.push('/OrderHistory')
     }
+    if(userstore.user ==="admin"){
+    history.push('/allOrders')
+    }
   }
 const OnclickAddhandler = (e) =>{
   e.preventDefault();

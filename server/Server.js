@@ -205,7 +205,17 @@ app.post("/orders",async(req,res)=> {
         res.status(500).json({status:"failed"})
     }});
 
+    //getallorders
 
+    app.get('/allOrders',async(req, res) => {
+        try {
+            const results = await db.query(" select o.orderid,u.name,o.producttitle from orders o,users u where o.userid=u.userid");
+            res.status(200).json({ status: 'success',data :results.rows});
+        }
+        catch (error) {
+            res.status(400).json({status:"failed",data :""})
+        }
+      }); 
 
 
 
